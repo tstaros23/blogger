@@ -15,7 +15,6 @@ require 'rails_helper'
 
          expect(page).to have_content("New Title!")
          expect(page).to have_content("New Body!")
-         #comment
        end
      end
    end
