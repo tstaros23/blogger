@@ -5,7 +5,7 @@ require 'rails_helper'
      it "can edit article attributes" do
        article_1 = Article.create!(title: "Title 1", body: "Body 1")
 
-       visit "/articles/#{article_1.id}"
+       visit article_path(article_1)
 
        click_link 'Edit'
        expect(current_path).to eq(edit_article_path(article_1))
@@ -15,8 +15,11 @@ require 'rails_helper'
 
        click_on "Update Article"
 
-       expect(article_1.title).to eq("New Title")
-       expect(article_1.body).to eq("New Body!")
+       expect(current_path).to eq(article_path(article_1))
+       expect(page).to have_content("New Title!")
+       expect(page).to have_content("New Body!")
+       expect(page).not_to have_content("Title 1")
+       expect(page).not_to have_content("Body 1")
      end
    end
  end
