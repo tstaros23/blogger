@@ -40,6 +40,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'active_designer'
+  gem 'geckodriver-helper'
+  gem 'selenium-webdriver', '>= 2.53.4'
 end
 
 group :development do
