@@ -20,6 +20,7 @@ require 'rails_helper'
        expect(page).to have_content("New Body!")
        expect(page).not_to have_content("Title 1")
        expect(page).not_to have_content("Body 1")
+       expect(page).to have_content("Article New Title! Updated!")
      end
    end
  end
