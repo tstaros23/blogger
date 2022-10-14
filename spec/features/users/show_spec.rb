@@ -26,6 +26,7 @@ end
        expect(current_path).to eq(articles_path)
        expect(page).to have_content(article_2.title)
        expect(page).to_not have_link(article_1.title)
+       expect(page).to have_content("Article New Title! Deleted!")
      end
    end
  end
